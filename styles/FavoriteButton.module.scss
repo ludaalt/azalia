@@ -1,0 +1,19 @@
+.button {
+  cursor: pointer;
+  display: inline-block;
+  background: none;
+  background-image: url("../assets/favorite.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 40px;
+  height: 40px;
+  border: 1px solid #f5f5f7;
+  border-radius: 50%;
+}
+
+.button:hover,
+.button_active {
+  border: 1px solid #ff0000;
+  background-image: url("../assets/favorite_active.svg");
+}
