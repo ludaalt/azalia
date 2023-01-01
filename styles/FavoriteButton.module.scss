@@ -1,10 +1,7 @@
+@import "main.scss";
+
 .button {
-  cursor: pointer;
-  display: inline-block;
-  background: none;
-  background-image: url("../assets/favorite.svg");
-  background-position: center;
-  background-repeat: no-repeat;
+  @include background("../assets/favorite.svg", no-repeat, center);
 
   width: 40px;
   height: 40px;

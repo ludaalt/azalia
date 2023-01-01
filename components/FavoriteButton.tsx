@@ -1,19 +1,24 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 
 import styles from "../styles/FavoriteButton.module.scss";
 
 interface FavoriteButtonProps {
-  isActive: boolean;
+  handleFavorite: (isFavorite: boolean) => void;
 }
 
-const FavoriteButton: FC<FavoriteButtonProps> = ({ isActive }) => {
+const FavoriteButton: FC<FavoriteButtonProps> = ({ handleFavorite }) => {
+  const [isFavoriteActive, setIsFavoriteActive] = useState(false);
   return (
     <button
       className={
-        isActive
+        isFavoriteActive
           ? `${styles.button} ${styles.button_active}`
           : `${styles.button}`
       }
+      onClick={() => {
+        setIsFavoriteActive((state) => !state);
+        handleFavorite(isFavoriteActive);
+      }}
     ></button>
   );
 };
