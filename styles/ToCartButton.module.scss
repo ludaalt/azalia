@@ -1,0 +1,38 @@
+@import "main.scss";
+
+.toCartBlock {
+  border-radius: 90px;
+  background-color: #f5f5f7;
+
+  display: flex;
+  align-items: center;
+}
+
+.toCartButton {
+  padding: 10px 20px;
+  background: #4056a1;
+  border-radius: 90px;
+
+  @include font-pack($roboto-font-stack, 500, 13px, 20px, #ffffff);
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.countButton {
+  padding: 10px 15px;
+}
+
+.decreaseButton {
+  @include background("../assets/decrease.svg", no-repeat, center);
+}
+
+.increaseButton {
+  @include background("../assets/increase.svg", no-repeat, center);
+}
+
+.productCount {
+  @include font-pack($roboto-font-stack, 500, 12px, 20px, #2e2e33);
+  opacity: 0.8;
+}
