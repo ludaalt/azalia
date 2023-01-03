@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+$roboto-font-stack: "Roboto", "Arial", sans-serif;
+
+@mixin font-pack($font-family, $weight, $size, $line-height, $color) {
+  font-family: $font-family;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin background($background-image, $background-repeat, $background-position) {
+  background-image: url($background-image);
+  background-repeat: $background-repeat;
+  background-position: $background-position;
+}
+
+%flex-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
