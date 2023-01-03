@@ -36,3 +36,16 @@
   @include font-pack($roboto-font-stack, 500, 12px, 20px, #2e2e33);
   opacity: 0.8;
 }
+
+.inCartLabel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 90px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 175px;
+  background: #00b177;
+
+  @include font-pack($roboto-font-stack, 500, 13px, 20px, #ffffff);
+}

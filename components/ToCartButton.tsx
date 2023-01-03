@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import styles from "../styles/ToCartButton.module.scss";
 
 interface ToCartButtonProps {
@@ -12,20 +12,39 @@ const ToCartButton: FC<ToCartButtonProps> = ({
   decreaseCount,
   increaseCount,
 }) => {
+  const [isproductInCart, setIsProductInCart] = useState(false);
   return (
     <div className={styles.toCartBlock}>
-      <button className={styles.toCartButton}>В корзину</button>
+      {!isproductInCart && (
+        <>
+          <button
+            className={styles.toCartButton}
+            onClick={() => setIsProductInCart((state) => !state)}
+          >
+            В корзину
+          </button>
 
-      <button
-        className={`${styles.countButton} ${styles.decreaseButton}`}
-        onClick={() => decreaseCount(productCurrentCount - 1)}
-        disabled={productCurrentCount === 0}
-      ></button>
-      <p className={styles.productCount}>{productCurrentCount}</p>
-      <button
-        className={`${styles.countButton} ${styles.increaseButton}`}
-        onClick={() => increaseCount(productCurrentCount + 1)}
-      ></button>
+          <button
+            className={`${styles.countButton} ${styles.decreaseButton}`}
+            onClick={() => decreaseCount(productCurrentCount - 1)}
+            disabled={productCurrentCount === 0}
+          ></button>
+          <p className={styles.productCount}>{productCurrentCount}</p>
+          <button
+            className={`${styles.countButton} ${styles.increaseButton}`}
+            onClick={() => increaseCount(productCurrentCount + 1)}
+          ></button>
+        </>
+      )}
+
+      {isproductInCart && (
+        <button
+          className={styles.inCartLabel}
+          onClick={() => setIsProductInCart((state) => !state)}
+        >
+          В корзине
+        </button>
+      )}
     </div>
   );
 };
